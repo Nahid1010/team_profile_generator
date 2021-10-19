@@ -1,0 +1,28 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "ctreating team profilr generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nahid1010/team_profile_generator.git"
+  },
+  "author": "nahid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nahid1010/team_profile_generator/issues"
+  },
+  "homepage": "https://github.com/Nahid1010/team_profile_generator#readme"
+}

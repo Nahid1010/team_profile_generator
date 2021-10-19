@@ -8,6 +8,10 @@ function getEngineer() {
         inquirer.prompt(questions.engQuestion)
         .then((engData) => {
             const engineer = new Engineer(
+                data.name,
+                data.id,
+                data.email,
+                engData.gituser
             );
             employees.push(engineer);
             chooseEmployee();
