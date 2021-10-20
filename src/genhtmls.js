@@ -77,12 +77,12 @@ module.exports = employees => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-        <title>MS Team Profile Generator</title>
+        <link rel="stylesheet" href="styles.css">
+        <title>Nahid Team Profile Generator</title>
     </head>
     <body>
         <main>
-            <div class="jumbotron jumbotron-fluid red p-5">
+            <div class="jumbotron jumbotron-fluid blue p-5">
                 <h1 class="text-center text-light">My Team</h1>
             </div>
         </main>
