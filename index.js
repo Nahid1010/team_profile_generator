@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const questions = require("./src/question.js");
+// import different employee classes
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -10,7 +11,8 @@ const generateHTML = require("./src/genHTML");
 
 // employee array
 const employees = [];
-
+// output html
+const outputHTML = "./diist/team.html";
 // Engineer
 function getEngineer() {
     inquirer.prompt(questions.empQuestions)
@@ -42,7 +44,43 @@ function getIntern() {
             );
             employees.push(intern);
             chooseEmployee();
-        });
-    });   
+        })
+    });
+}   
+// choice of employee
+function chooseEmployee() {
+    inquirer.prompt(questions.menuQuestions)
+    .then((data) => {
+        switch(data.empType) {
+            case "Engineer":
+                getEngineer();
+                break;
+            case "Intern":
+                getIntern();
+                break;
+            default:
+                console.log(employees);
+                fs.writeFile(outputHTML, generateHTML(employees), (err) =>
+                    err ? console.error(err) : console.log(`${outputHTML} created!`)
+                );
+        }
+    });
 }
-main ()
+
+// main function
+async function main() {
+    // first get manager's details
+    inquirer.prompt(questions.managerQuestions)
+    .then((data) => {
+        const manager = new Manager(
+            data.name,
+            data.id,
+            data.email,
+            data.office
+        );
+        employees.push(manager);
+        chooseEmployee();
+    })
+};
+// call main function
+main()
